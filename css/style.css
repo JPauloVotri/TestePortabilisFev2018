@@ -1,0 +1,179 @@
+@import url('//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+/* Menu */
+.menu {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.menu button {
+  background-color: #4CAF50;
+  border: 1px solid green;
+  color: white;
+  padding: 16px 64px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  float: left;
+}
+
+.menu button:not(:last-child) {
+  border-right: none;
+}
+
+.menu button:hover {
+  background-color: #3e8e41;
+}
+
+/* Telas de cadastro e listagem */
+#cadAluno, #cadCurso, #matAluno, #listaMatriculas {
+  display: none;
+}
+
+/* Formulários */
+input, select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=reset] {
+  width: 100%;
+  background-color: #AF4C50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45A049;
+}
+
+input[type=reset]:hover {
+  background-color: #A04549;
+}
+
+div.form {
+  font-family: "Arial";
+  border-radius: 5px;
+  background-color: #F2F2F2;
+  padding: 20px;
+}
+
+/* Mensagens de sucesso e erro */
+div#mensagem {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 320px;
+  margin-top: -77px;
+  margin-left: -228px;
+  border-radius: 5px;
+
+  text-align: center;
+  font-family: "Arial";
+  color: white;
+  padding: 16px 64px;
+
+  display: none;
+}
+
+div#mensagem.sucesso{
+  border: 1px solid green;
+  background-color: #4BB543;
+}
+
+div#mensagem.erro{
+  border: 1px solid red;
+  background-color: #AF4C50;
+  display: block;
+}
+
+div#mensagem button {
+  background-color: white;
+  border: 1px solid gray;
+  border-radius: 5px;
+  color: black;
+  padding: 8px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Listagem */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  user-select: none;
+}
+
+tr:nth-child(even) {
+  background-color: #DDD;
+}
+
+th, td {
+  border: 1px solid #AAA;
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  border: 1px solid green;
+  color: white;
+}
+
+th:hover {
+  background-color: #3e8e41;
+}
+
+tr:hover {
+  background-color: #CCC;
+}
+
+/* Página da Matricula */
+
+#matricula {
+  position: relative;
+  left: 50%;
+  width: 720px;
+  margin-left: -380px;
+  border-radius: 5px;
+  padding: 20px;
+
+  text-align: center;
+  font-family: "Arial";
+  color: white;
+}
