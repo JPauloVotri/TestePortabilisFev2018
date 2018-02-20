@@ -55,7 +55,7 @@ input[type=submit] {
   cursor: pointer;
 }
 
-input[type=reset] {
+input[type=reset]{
   width: 100%;
   background-color: #AF4C50;
   color: white;
@@ -111,7 +111,7 @@ div#mensagem.erro{
   display: block;
 }
 
-div#mensagem button {
+div button.voltar {
   background-color: white;
   border: 1px solid gray;
   border-radius: 5px;

@@ -10,7 +10,7 @@ $valorMatricula = $_POST['valorMatricula'];
 if ($valorMatricula > $valor) {?>
   <div id="mensagem" class="erro">
     <h3>Saldo insuficiente para efetuar o pagamento do curso. Ainda são necessarios R$ <?= $valorMatricula-$valor ?></h3>
-    <a href='index.php'><button type="button">Voltar</a>
+    <a href='index.php'><button class='voltar' type="button">Voltar</a>
   </div> <?php
 } else {
   $query = "UPDATE matricula SET pago = 1 where id = ".$matricula;
@@ -21,7 +21,7 @@ if ($valorMatricula > $valor) {?>
 	if ($valorMatricula < $valor){
 		$troco = number_format($valor-$valorMatricula, 2);
     echo "<h4>Troco: $troco</h4>".geraTroco($troco)."
-    <br><a href='matricula.php?matricula=$matricula'><button type='button'>Voltar</a>";
+    <br><a href='matricula.php?matricula=$matricula'><button class='voltar' type='button'>Voltar</a>";
 	}
 }
 

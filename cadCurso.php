@@ -19,7 +19,7 @@ if (!$result) {
 
   echo "<div id='mensagem' class='erro'>
     <h3>Error with query:</h3> $errorMessage <br>
-    <a href='index.php'><button type='button'>Voltar</a>";
+    <a href='index.php'><button class='voltar' type='button'>Voltar</a>";
 
   pg_close(getDb());
   exit();

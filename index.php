@@ -23,7 +23,7 @@
       <button type="button" onclick="abrirTela('cadAluno')">Cadastrar Alunos</button>
       <button type="button" onclick="abrirTela('cadCurso')">Cadastrar Cursos</button>
       <button type="button" onclick="abrirTela('matAluno')">Matricular Alunos</button>
-      <button type="button" onclick="document.location.href='listaMatriculas.php'">Listar Matriculas</button>
+      <button type="button" onclick="document.location.href='filtroMatriculas.php'">Listar Matriculas</button>
     </div>
 
     <div id="mensagem" class="sucesso">

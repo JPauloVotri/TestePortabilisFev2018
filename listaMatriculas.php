@@ -1,24 +1,52 @@
 <link rel="stylesheet" type="text/css" href="css/style.css" />
 
-<fieldset>
-  <legend><h3>Listagem de Matriculas</h3></legend>
-  <table id="tabelaMatriculas">
-    <tr>
-      <th onclick="sorteiaLista(0)">ID da Matrícula</th>
-      <th onclick="sorteiaLista(1)">Aluno (ID)</th>
-      <th onclick="sorteiaLista(2)">Curso (ID)</th>
-      <th onclick="sorteiaLista(3)">Data da Matrícula</th>
-      <th onclick="sorteiaLista(4)">Ano</th>
-      <th onclick="sorteiaLista(5)">Pago?</th>
-    </tr>
-
 <?php
 
 include("dbConnect.php");
 
-$query = "SELECT *
-            FROM matricula
-           WHERE ativo = 1";
+$ano = $_GET['ano'];
+$nome = $_GET['nome'];
+$cursoId = $_GET['cursoId'];
+$pagamento = $_GET['pagamento'];
+$ativo = $_GET['ativas'];
+
+$ano = ($ano != '') ? " AND mat.anoletivo = $ano" : '';
+$nome = ($nome != '') ? " AND alu.nome LIKE '%$nome%'" : '';
+$cursoId = ($cursoId != '') ? " AND mat.cursoid = $cursoId" : '';
+$pagamento = ($pagamento != '') ? " AND mat.pago = $pagamento" : '';
+$ativo = ($ativo != '') ? " AND mat.ativo = $ativo" : '';
+
+$filtro = "$ano $nome $cursoId $pagamento $ativo";
+
+?>
+
+<div class="form">
+  <div><button class='voltar' type='button' onclick="document.location.href='/'">Voltar</div>
+  <fieldset>
+    <legend><h3>Listagem de Matriculas</h3></legend>
+    <table id="tabelaMatriculas">
+      <tr>
+        <th onclick="sorteiaLista(0)">ID da Matrícula</th>
+        <th onclick="sorteiaLista(1)">Aluno (ID)</th>
+        <th onclick="sorteiaLista(2)">Curso (ID)</th>
+        <th onclick="sorteiaLista(3)">Data da Matrícula</th>
+        <th onclick="sorteiaLista(4)">Ano</th>
+        <th onclick="sorteiaLista(5)">Pago?</th>
+      </tr>
+
+<?php
+
+$query = "SELECT mat.id,
+                 mat.alunoid,
+                 mat.cursoid,
+                 mat.datamatricula,
+                 mat.anoletivo,
+                 mat.pago,
+                 alu.nome
+            FROM matricula AS mat,
+                 aluno AS alu 
+           WHERE mat.alunoid = alu.id $filtro
+           ORDER BY mat.id";
 $result = pg_exec(getDb(), $query);
 $numLinhas = pg_numrows($result);
 
@@ -48,8 +76,9 @@ pg_close(getDb());
 
 ?>
 
-  </table>
-</fieldset>
+    </table>
+  </fieldset>
+</div>
 
 <script>
   function sorteiaLista(campo) {
