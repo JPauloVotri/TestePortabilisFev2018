@@ -111,17 +111,36 @@ div#mensagem.erro{
   display: block;
 }
 
-div button.voltar {
-  background-color: white;
-  border: 1px solid gray;
+button.voltar {
+  position: relative;
+  background-color: #4CAF50;
+  border: none;
   border-radius: 5px;
   color: black;
   padding: 8px 32px;
+  width: 128px;
+  left: 50%;
+  margin-left: -80px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
   cursor: pointer;
+  color: white;
+}
+
+#mensagem button.voltar {
+  background-color: white;
+  color: black;
+  left: 0%;
+  margin-left: 0px;
+}
+
+#matricula button.voltar {
+  background-color: #0C5F0C;
+  color: white;
+  left: 0%;
+  margin-left: 0px;
 }
 
 a {
@@ -165,7 +184,7 @@ tr:hover {
 
 /* Página da Matricula */
 
-#matricula {
+div#matricula {
   position: relative;
   left: 50%;
   width: 720px;

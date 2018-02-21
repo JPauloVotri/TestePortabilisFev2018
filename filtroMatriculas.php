@@ -1,6 +1,7 @@
 <link rel="stylesheet" type="text/css" href="css/style.css" />
 
 <div class="form">
+  <div><button class='voltar' type='button' onclick="document.location.href='/'">Voltar</div>
   <fieldset>
     <legend><h3>Listar Matriculas</h3></legend>
     <form action="listaMatriculas.php" method="get">

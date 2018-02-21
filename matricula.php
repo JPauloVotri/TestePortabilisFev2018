@@ -31,6 +31,8 @@ switch ($curso['periodo']){
 
 ?>
 
+<div id="matricula"><button class="voltar" type="button" onclick="document.location.href='/'">Voltar</button></div>
+
 <div id="matricula" style="background-color:#2D8D2D;">
   <h1>Matricula #<?= $matricula['id']; ?></h1>
   <h4>Data da Matricula: <?= $matricula['datamatricula']; ?></h4>
