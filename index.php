@@ -122,5 +122,22 @@
         </form>
       </fieldset>
     </div>
+
+    <script>
+      function abrirTela(tela) {
+        var status = document.getElementById(tela).style.display;
+        if (status == "block")
+          status = "none";
+        else
+          status = "block";
+        
+        document.getElementById("cadAluno").style.display = "none";
+        document.getElementById("cadCurso").style.display = "none";
+        document.getElementById("matAluno").style.display = "none";
+        document.getElementById("mensagem").style.display = "none";
+
+        document.getElementById(tela).style.display = status;
+      }
+    </script>
   </body>
 </html>
