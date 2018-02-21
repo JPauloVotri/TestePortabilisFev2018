@@ -8,6 +8,7 @@
 
   <body>
     <!-- Carrega o jQuery -->
+    <script src="js/abrirTela.js"></script>
     <script src="https://code.jquery.com/jquery-2.1.3.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-maskmoney/3.0.2/jquery.maskMoney.min.js"></script>
@@ -20,9 +21,9 @@
     
     <!-- Botões do menu -->
     <div class="menu">
-      <button type="button" onclick="abrirTela('cadAluno')">Cadastrar Alunos</button>
-      <button type="button" onclick="abrirTela('cadCurso')">Cadastrar Cursos</button>
-      <button type="button" onclick="abrirTela('matAluno')">Matricular Alunos</button>
+      <button id="btnAluno" type="button" onclick='abrirTela("cadAluno")'>Cadastrar Alunos</button>
+      <button id="btnCurso" type="button" onclick='abrirTela("cadCurso")'>Cadastrar Cursos</button>
+      <button id="btnMatricula" type="button" onclick='abrirTela("matAluno")'>Matricular Alunos</button>
       <button type="button" onclick="document.location.href='filtroMatriculas.php'">Listar Matriculas</button>
     </div>
 
@@ -121,23 +122,5 @@
         </form>
       </fieldset>
     </div>
-
-    <script>
-      function abrirTela(tela) {
-        var status = document.getElementById(tela).style.display;
-        if (status == "block")
-          status = "none";
-        else
-          status = "block";
-        
-        document.getElementById("cadAluno").style.display = "none";
-        document.getElementById("cadCurso").style.display = "none";
-        document.getElementById("matAluno").style.display = "none";
-        document.getElementById("listaMatriculas").style.display = "none";
-        document.getElementById("mensagem").style.display = "none";
-
-        document.getElementById(tela).style.display = status;
-      }
-    </script>
   </body>
 </html>
