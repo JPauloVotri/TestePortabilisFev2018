@@ -27,6 +27,6 @@ if (!$result) {
 
 pg_close(getDb());
 
-header("location:/");
+header("location:/?sucesso=1");
 
 ?>
